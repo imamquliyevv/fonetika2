@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Sınağı - Yevv Testi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5 !important; border-color: #10b981 !important; }
+    .incorrect { background-color: #fee2e2 !important; border-color: #ef4444 !important; }
+    .progress-bar { transition: width 0.5s ease; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-indigo-800 mb-2">📝 Fonetika Test Sınağı</h1>
+      <p class="text-gray-600">Uğurlar</p>
+    </header>
+
+    <div id="test-container" class="bg-white rounded-lg shadow-xl p-6 mb-6">
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-medium text-gray-600" id="progress-text">Sual 0/13</span>
+          <span class="text-sm font-medium text-gray-600" id="timer">00:00</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="progress-bar bg-indigo-600 h-2 rounded-full" style="width: 0%" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <form id="test-form">
+        <!-- Sual 1 -->
+        <div class="question mb-8" id="question-1">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">1. Hansı sözdə [g] samiti kar qarşılığı vardır?</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q1" value="A" class="mr-3"> Seçki
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q1" value="B" class="mr-3"> Ləçək
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q1" value="C" class="mr-3"> Kassa
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q1" value="D" class="mr-3"> Marka
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q1" value="E" class="mr-3"> Çəkiç
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 2 -->
+        <div class="question mb-8" id="question-2">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">2. Son samiti kar tələffüz edilən sözlər cərgəsini müəyyən edin.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q2" value="A" class="mr-3"> Torpaq , katib , ulduz
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q2" value="B" class="mr-3"> Çəkic , bilaq , bağ
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q2" value="C" class="mr-3"> Bulud , obraz , vətən
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q2" value="D" class="mr-3"> Qanad , obyektiv , sənəd
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q2" value="E" class="mr-3"> Budaq , nifaq , çəkic
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 3 -->
+        <div class="question mb-8" id="question-3">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">3. Cərgələrin birində “q” /qe/ hərfi ardıcıllıqla [q] , [ğ] , [x] və [k] səslərin ifadə edir:</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q3" value="A" class="mr-3"> Haqqında , toqqa , aşıq havası
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q3" value="B" class="mr-3"> Üfüq xətti , uşaq , qənimət , nöqtə
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q3" value="C" class="mr-3"> Qulaq aparatı , otaqsız , məqsəd
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q3" value="D" class="mr-3"> Müşfiq , qutu , haqsız , qəza
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q3" value="E" class="mr-3"> Aşiq , aşıq , əqidə , papaq
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 4 (çoxseçimli) -->
+        <div class="question mb-8" id="question-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">4. “Ürəkaçan” sözünün fonetik xüsusiyyətləri ilə bağlı düzgün fikirləri müəyyən edin.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q4" value="1" class="mr-3"> 1. Yazılışı ilə deyilişi fərqlidir
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q4" value="2" class="mr-3"> 2. Saitlərin hamısı açıq və dodaqlanmayandır
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q4" value="3" class="mr-3"> 3. [x’] samitinin cingiltili qarşılığı vardır
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q4" value="4" class="mr-3"> 4. Samitlərin 3-ü cingiltili , 1-i kardır
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q4" value="5" class="mr-3"> 5. Üç qarşılığı olmayan samit vardır
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 5 -->
+        <div class="question mb-8" id="question-5">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">5. ”Zərgərlik” sözünün fonetik xüsusiyyətləri ilə bağlı səhv fikri müəyyən edin.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q5" value="A" class="mr-3"> [ə] açıq , incə , [i] qapalı , incə saitdir.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q5" value="B" class="mr-3"> Yazılışı ilə deyilişi fərqlənir.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q5" value="C" class="mr-3"> [z] , [r] , [g] , [l] samitləri cingiltili , [x’] samiti kardır.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q5" value="D" class="mr-3"> Ahəng qanunu gözlənilmişdir.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q5" value="E" class="mr-3"> Vurğu üçüncü hecanın üzərindədir.
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 6 -->
+        <div class="question mb-8" id="question-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">6. Hansı sözlər düzgün yazılıb?</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q6" value="A" class="mr-3"> üzürlü , sinfoniya , elmli
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q6" value="B" class="mr-3"> rastlaşmaq , təksir , rəhimli
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q6" value="C" class="mr-3"> sehrbaz , dostluq , həcmli
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q6" value="D" class="mr-3"> sifariş , zəhmli , xoşbəxtlik
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q6" value="E" class="mr-3"> neftçi , sədrlik , müdür
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 7 -->
+        <div class="question mb-8" id="question-7">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">7. Hansı sözlərdə “y” samitindən düzgün istifadə edilmişdir?</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q7" value="A" class="mr-3"> mənəviyyat , məhduduiyyət , tərbiyyə
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q7" value="B" class="mr-3"> adliyyə , anarxiya , ciddiyyət
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q7" value="C" class="mr-3"> xasiyət , mərsiyyə , diviziya
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q7" value="D" class="mr-3"> cərrahiyə , irsiyyət , xüsusiyət
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q7" value="E" class="mr-3"> heysiyyət , təhkiyə , irsiyyət
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 8 -->
+        <div class="question mb-8" id="question-8">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">8. Tələffüzü yanlış verilmişdir:</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q8" value="A" class="mr-3"> doqquz [d o k’ q u z]
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q8" value="B" class="mr-3"> əlbəttə [ə l b ə t d ə]
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q8" value="C" class="mr-3"> nəqqaş [n ə q k’ a ş]
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q8" value="D" class="mr-3"> mütərəqqi [m ü t ə r ə k’ q i ]
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q8" value="E" class="mr-3"> təşəkkür [t ə ş ə k k ü r]
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 9 -->
+        <div class="question mb-8" id="question-9">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">9. Hansı sözlərə saitlə başlayan şəkilçi artırıldıqda “q-ğ” əvəzlənməsi baş vermir?</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q9" value="A" class="mr-3"> monoloq , məntiq , aşiq
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q9" value="B" class="mr-3"> bulaq , yarpaq , qulaq
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q9" value="C" class="mr-3"> toyuq , yaylaq , şərq
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q9" value="D" class="mr-3"> hüquq , məntiq , uşaq
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q9" value="E" class="mr-3"> üfüq , aşıq , bulaq
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 10 -->
+        <div class="question mb-8" id="question-10">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">10. Kar samitlə bitən sözlər müəyyən edin.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q10" value="1" class="mr-3"> 1. gəlmişdir
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q10" value="2" class="mr-3"> 2. rüsvayçılıq
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q10" value="3" class="mr-3"> 3. diqqətlə
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q10" value="4" class="mr-3"> 4. rəngsaz
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="checkbox" name="q10" value="5" class="mr-3"> 5. sabitlik
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 11 -->
+        <div class="question mb-8" id="question-11">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">11. Hansı sözdə səs və hərflərin sayı bərabərdi.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q11" value="A" class="mr-3"> Bəxtsiz
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q11" value="B" class="mr-3"> Biabır
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q11" value="C" class="mr-3"> Bəraət
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q11" value="D" class="mr-3"> Bədii
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q11" value="E" class="mr-3"> Bəşəriyyət
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 12 -->
+        <div class="question mb-8" id="question-12">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">12. Səslərin sayı hərflərin sayından az olan sözü tapın.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q12" value="A" class="mr-3"> zəif
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q12" value="B" class="mr-3"> şüar
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q12" value="C" class="mr-3"> güclü
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q12" value="D" class="mr-3"> poema
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q12" value="E" class="mr-3"> neftçi
+            </label>
+          </div>
+        </div>
+
+        <!-- Sual 13 -->
+        <div class="question mb-8" id="question-13">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">13. "Qiraət,heca,qənaət" sözləri üçün hansı fikir ortaqdır?</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q13" value="A" class="mr-3"> Həm saitlə, həm də samitlə bitən heca var
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q13" value="B" class="mr-3"> Uzanan sait var
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q13" value="C" class="mr-3"> Deyilişi ilə yazılışı fərqlənmir
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q13" value="D" class="mr-3"> İkihecalıdır
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q13" value="E" class="mr-3"> Ahəng qaununa aiddir
+            </label>
+          </div>
+        </div>
+
+
+
+        <button type="button" onclick="finishTest()" class="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">Bitdi</button>
+      </form>
+    </div>
+
+    <div id="result" class="text-center text-xl font-bold text-gray-800"></div>
+  </div>
+
+  <script>
+    const correctAnswers = {
+      q1: "B", q2: "E", q3: "B", q4: ["1","3"], q5: "D",
+      q6: "C", q7: "B", q8: "B", q9: "A", q10: ["2","5"],
+      q11: "C",q12: "E", q13:"C"
+    };
+    const total = Object.keys(correctAnswers).length;
+
+    let startTime = Date.now();
+    setInterval(() => {
+      let elapsed = Math.floor((Date.now() - startTime) / 1000);
+      let min = String(Math.floor(elapsed / 60)).padStart(2, "0");
+      let sec = String(elapsed % 60).padStart(2, "0");
+      document.getElementById("timer").innerText = `${min}:${sec}`;
+    }, 1000);
+
+    // ✅ Cavab seçildikdə progress bar-ı yenilə
+    document.getElementById("test-form").addEventListener("change", updateProgress);
+
+    function updateProgress() {
+      let answered = 0;
+      for (let i = 1; i <= total; i++) {
+        let qname = "q" + i;
+        let inputs = document.querySelectorAll(`input[name=${qname}]`);
+        if ([...inputs].some(inp => inp.checked)) answered++;
+      }
+      let percent = Math.round((answered / total) * 100);
+      document.getElementById("progress-bar").style.width = percent + "%";
+      document.getElementById("progress-text").innerText = `Sual ${answered}/${total}`;
+    }
+
+    function finishTest() {
+      let form = document.getElementById("test-form");
+      let score = 0;
+      let questions = form.querySelectorAll(".question");
+
+      questions.forEach((q, index) => {
+        let qname = "q" + (index + 1);
+        let labels = q.querySelectorAll("label");
+        labels.forEach(label => label.classList.remove("correct","incorrect"));
+
+        let correct = correctAnswers[qname];
+        let selected;
+
+        if (Array.isArray(correct)) {
+          selected = [...form.querySelectorAll(`input[name=${qname}]:checked`)].map(e=>e.value);
+          let isCorrect = correct.length === selected.length && correct.every(v => selected.includes(v));
+          if (isCorrect) {
+            score++;
+            selected.forEach(v => q.querySelector(`input[value="${v}"]`).parentElement.classList.add("correct"));
+          } else {
+            selected.forEach(v => q.querySelector(`input[value="${v}"]`).parentElement.classList.add("incorrect"));
+            correct.forEach(v => q.querySelector(`input[value="${v}"]`).parentElement.classList.add("correct"));
+          }
+        } else {
+          selected = form.querySelector(`input[name=${qname}]:checked`);
+          if (selected) {
+            if (selected.value === correct) {
+              score++;
+              selected.parentElement.classList.add("correct");
+            } else {
+              selected.parentElement.classList.add("incorrect");
+              q.querySelector(`input[value="${correct}"]`).parentElement.classList.add("correct");
+            }
+          } else {
+            q.querySelector(`input[value="${correct}"]`).parentElement.classList.add("correct");
+          }
+        }
+      });
+
+      document.getElementById("result").innerHTML =
+        `✔️ ${score} düzgün | ❌ ${total - score} səhv (cəmi ${total} sual)`;
+    }
+  </script>
+</body>
+</html>
