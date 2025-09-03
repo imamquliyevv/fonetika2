@@ -21,7 +21,7 @@
     <div id="test-container" class="bg-white rounded-lg shadow-xl p-6 mb-6">
       <div class="mb-6">
         <div class="flex justify-between items-center mb-2">
-          <span class="text-sm font-medium text-gray-600" id="progress-text">Sual 0/13</span>
+          <span class="text-sm font-medium text-gray-600" id="progress-text">Sual 0/15</span>
           <span class="text-sm font-medium text-gray-600" id="timer">00:00</span>
         </div>
         <div class="w-full bg-gray-200 rounded-full h-2">
@@ -316,7 +316,49 @@
           </div>
         </div>
 
+        <!-- Sual 14 -->
+        <div class="question mb-8" id="question-14">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">14. "Şənbə" sözünün fonetik xüsusiyyətləri ilə bağlı səhv fikirləri müəyyən edin.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q14" value="A" class="mr-3"> Sözdəki [ş]-kar,[n],[b]-cingiltili samitlərdir.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q14" value="B" class="mr-3"> Sözdə 5 hərf və 5 səs var.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q14" value="C" class="mr-3"> Vurğu ikinci hecaya düşür.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q14" value="D" class="mr-3"> [ə]-incə,açıq,dodaqlanmayan saitdir.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q14" value="E" class="mr-3"> İki hecalıdır.
+            </label>
+          </div>
+        </div>
 
+        <!-- Sual 15 -->
+        <div class="question mb-8" id="question-15">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">15. "Oğlanlar" sözünün fonetik xüsusiyyətləri ilə bağlı səhv fikri müəyyən edin.</h3>
+          <div class="space-y-2">
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q15" value="A" class="mr-3"> [o]-qalın,dodaqlanan,açıq; [a]-qalın,dodaqlanmayan, açıq saitdir.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q15" value="B" class="mr-3"> [l] səsindən iki dəfə istifadə edilib.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q15" value="C" class="mr-3"> [ğ] [l] [n] [r] səsləri cingiltili samitlərdir.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q15" value="D" class="mr-3"> 8 səsdən və 8 hərfdən ibarətdi.
+            </label>
+            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer">
+              <input type="radio" name="q15" value="E" class="mr-3"> Üçhecalıdır və vurgu III hecadadır.
+            </label>
+          </div>
+        </div>
 
         <button type="button" onclick="finishTest()" class="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">Bitdi</button>
       </form>
@@ -329,7 +371,7 @@
     const correctAnswers = {
       q1: "B", q2: "E", q3: "B", q4: ["1","3"], q5: "D",
       q6: "C", q7: "B", q8: "B", q9: "A", q10: ["2","5"],
-      q11: "C",q12: "E", q13:"C"
+      q11: "C",q12: "E", q13:"C",q14:"A",q15:"B"
     };
     const total = Object.keys(correctAnswers).length;
 
